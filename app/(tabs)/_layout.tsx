@@ -1,37 +1,87 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { Tabs } from "expo-router";
+import { Colors } from "@/constants/Colors";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import CustomHeader from "@/components/common/CustmeHeader";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
+      initialRouteName="chat"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
+        tabBarActiveTintColor: "light",
+        header: (e) => <CustomHeader title={e.route.name} />,
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="news"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
+          title: "News",
+
+          tabBarIcon: (e) =>
+            e.focused ? (
+              <MaterialCommunityIcons
+                name="home-variant"
+                size={24}
+                color={Colors.light.tabIconDefault}
+              />
+            ) : (
+              <MaterialCommunityIcons
+                name="home-variant-outline"
+                size={24}
+                color={Colors.light.tabIconSelected}
+              />
+            ),
         }}
       />
+
       <Tabs.Screen
-        name="explore"
+        name="chat"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
+          title: "Chat",
+          tabBarIcon: (e) =>
+            e.focused ? (
+              <MaterialCommunityIcons
+                name="chat"
+                size={24}
+                color={Colors.light.tabIconDefault}
+              />
+            ) : (
+              <MaterialCommunityIcons
+                name="chat-outline"
+                size={24}
+                color={Colors.light.tabIconSelected}
+              />
+            ),
         }}
       />
     </Tabs>
   );
+}
+{
+  /* 
+ 
+      <Tabs.Screen
+        name="reales"
+        options={{
+          title: "Reales",
+          headerShown : false,
+          tabBarIcon: (e) =>
+            e.focused ? (
+              <MaterialCommunityIcons
+                name="video"
+                size={24}
+                color={Colors.light.tabIconDefault}
+              />
+            ) : (
+              <MaterialCommunityIcons
+                name="video-outline"
+                size={24}
+                color={Colors.light.tabIconSelected}
+              />
+            ),
+        }}
+      />
+ 
+ 
+  */
 }

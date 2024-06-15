@@ -4,6 +4,18 @@
 
 
 // heart 
+<AntDesign name="heart" size={24} color="black" />
+<AntDesign name="hearto" size={24} color="black" />
 
+// sund 
+<Feather name="send" size={24} color="black" />
+<FontAwesome name="send" size={24} color="black" />
 
+// user 
+<AntDesign name="user" size={24} color="black" />
 
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
