@@ -1,12 +1,18 @@
 
 {
-  "rootDir": ".",
   "extends": "expo/tsconfig.base",
+  "typeRoots": [
+    "node_modules/@types",
+    "path/to/local/types"
+  ],
   "compilerOptions": {
     "strict": true,
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@firebase/auth": [
+        "./node_modules/@firebase/auth/dist/index.rn.d.ts"
       ]
     }
   },
@@ -14,6 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "node_modules/firebase",
+    "expo-env.d.ts",
+    "metro.config.js"
   ]
 }

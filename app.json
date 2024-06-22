@@ -55,5 +55,8 @@
         "projectId": "a83051cc-5f15-4939-98c8-fe4bc8a72eb8"
       }
     }
+  },
+  "experiments": {
+    "typedRoutes": true
   }
 }

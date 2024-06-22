@@ -2,6 +2,7 @@ import { Tabs } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import CustomHeader from "@/components/common/CustmeHeader";
+import { Image } from "expo-image";
 
 export default function TabLayout() {
   return (
@@ -9,7 +10,7 @@ export default function TabLayout() {
       initialRouteName="chat"
       screenOptions={{
         tabBarActiveTintColor: "light",
-        header: (e) => <CustomHeader title={e.route.name} />,
+  headerShown : false
       }}
     >
       <Tabs.Screen
